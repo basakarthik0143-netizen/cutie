@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Advance Birthday Wishes 💖</title>
+
+<style>
+body{
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+    font-family: 'Poppins', sans-serif;
+    text-align:center;
+    padding-top:40px;
+    overflow:hidden;
+}
+
+/* Card Box */
+.card{
+    background:white;
+    width:350px;
+    margin:auto;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Photo */
+img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    border:5px solid pink;
+}
+
+/* Heading */
+h1{
+    color:#ff0066;
+    font-size:26px;
+}
+
+/* Message */
+p{
+    font-size:16px;
+    color:#333;
+}
+
+/* Buttons */
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    font-size:16px;
+    cursor:pointer;
+    margin:10px;
+}
+
+#btn1{
+    background:#ff0066;
+    color:white;
+}
+
+#btn2{
+    background:#00bcd4;
+    color:white;
+    position:absolute;
+}
+
+/* Floating Hearts */
+.heart{
+    position:fixed;
+    bottom:-10px;
+    color:red;
+    font-size:20px;
+    animation: float 6s infinite;
+}
+
+@keyframes float{
+    0%{bottom:0; opacity:1;}
+    100%{bottom:100%; opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <img src="akka.jpg">
+    <h1>Advance Happy Birthday 🎉</h1>
+    <p>Wishing you lots of happiness, success and smiles always 💐</p>
+    <p>May your life be colorful like this page 🌈</p>
+
+    <button id="btn1" onclick="showMsg()">Click Me 🎁</button>
+    <button id="btn2" onmouseover="moveButton()">Catch Me 😜</button>
+</div>
+
+<script>
+function showMsg(){
+    alert("You are special and amazing! Advance Happy Birthday 💖");
+}
+
+// Moving button
+function moveButton(){
+    let btn = document.getElementById("btn2");
+    let x = Math.random() * window.innerWidth;
+    let y = Math.random() * window.innerHeight;
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
+}
+
+// Hearts animation
+setInterval(()=>{
+    let heart = document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left = Math.random()*100+"%";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
+},300);
+</script>
+
+</body>
+</html>
